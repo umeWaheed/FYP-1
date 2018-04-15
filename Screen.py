@@ -1,37 +1,48 @@
-# from graphics import Image as Im
 from FaceDetection import gather_samples
-from Face import resize
-from graphics import *
+from Analyse import write_settings
+# from graphics import *
+import os
 import tkinter as tk
-# from threading import Timer
-# import pyttsx3
 import Global
 import MainFace1
 import threading
-# from subprocess import Popen
 from PIL import Image, ImageTk
 from Face import resize
 from FacialLandmark import rect_to_bb
-# import numpy as np
 import cv2
 import dlib
 from tkinter import Scale
-from Analyse import load_settings
 from Keyboard import StartPage
 import Frames
+from db import DataBase
 # import VideoStream  # for pi camera
 
 # Global.vid = VideoStream.VideoStream(usePiCamera=True).start()
 Global.vid = cv2.VideoCapture(0)  # for webcam
 # global func_id,
-global req_frame
+global req_frame, s
+s = None
 # func_id = None
-width = 800
-height = 400
+width = 1000
+height = 800
 
 def prints():
     print('here')
     s.frame.grid_forget()
+
+
+def checkUser(var):
+    # get the label from the list of current users
+    # if the user already exists then monitor him
+    # else take user name and samples of the new user
+    label = f.subjects.index(var.get())
+    if label != 0:
+        Frames.get_home()
+        MainFace1.FaceVal.label = label     # set the label of user
+        gather_samples(f.subjects[label], label, 2)     # take 2 images of the user
+        run(label)
+    else:
+        takeInput()
 
 
 def takeInput():
@@ -54,24 +65,25 @@ def get_name():
     gather()
 
 
-class Screen(tk.Frame):
-    def __init__(self):
-        super(Screen, self).__init__()
+class Screen:
+    def __init__(self, parent):
+        # super(Screen, self).__init__()
         self.blinking = True
         '''self.win = GraphWin('New window', 500, 300)
         self.win.setBackground(color_rgb(255, 255, 255))'''
-        self.win = tk.Tk()
-        self.win.wm_title('Fit Assist')
+        self.win = tk.Frame(parent)
+        self.parent = parent
+        # self.win.wm_title('Fit Assist')
         # self.win.state('zoomed')
-        self.win.attributes('-fullscreen', True)
+        # self.win.attributes('-fullscreen', True)
         self.win.config(background='white') # , width=width, height=height)
         # width = self.win.winfo_width()
         # height = self.win.winfo_height()
 
         '''add menu in the screen'''
-        self.menu = tk.Menu(self.win)
+        self.menu = tk.Menu(self.parent)
         self.menu.add_command(label='Home', command=Frames.get_home)
-        self.menu.add_command(label='Stats', command=prints)
+        self.menu.add_command(label='Stats', command=Frames.get_stats)
 
         self.exermenu = tk.Menu(self.menu)
         self.eyemenu = tk.Menu(self.exermenu)
@@ -91,7 +103,7 @@ class Screen(tk.Frame):
         self.menu.add_command(label='Settings', command=Frames.get_settings)
         self.menu.add_command(label='About', command=Frames.get_about)
         self.menu.add_command(label='Exit', command=Frames.cancel)
-        self.win.config(menu=self.menu)
+        self.parent.config(menu=self.menu)
 
         '''frame holds the images to be displayed'''
         self.frames = {}
@@ -103,6 +115,7 @@ class Screen(tk.Frame):
         self.frames['about'] = self.about_frame = tk.Frame(self.win, width=width, height=height - 100)  # about frame
         self.frames['setting'] = self.set_frame = tk.Frame(self.win, width=width, height=height-100)     # settings frame
         self.frames['exercise'] = tk.Frame(self.win, width=width, height=height-100)     # exercise frame
+        self.frames['stats'] = tk.Frame(self.win, width=width, height=height-100)           # stats frame
         self.frames[self.current_frame].grid(row=3, column=0)
 
         self.label1 = tk.Label(self.frames["home"])
@@ -113,12 +126,18 @@ class Screen(tk.Frame):
         self.gifBackgroundImages = list()
         self.actualGifBackgroundImage = 0
         self.ok = tk.Button(self.win, text='click me to become friends!', command=takeInput)
+        self.usage = None
+
+        self.win.pack()
+
 
     def run_gif(self):
         # global func_id
         # CHECK IF LIST IS EMPTY
         if not Global.is_available: # if user is not available go sad
-            self.sad()
+            self.sad('resources/sad.gif')
+        elif Global.usage_exceed:
+            self.sad('resources/tired.gif')
         else:
             if len(self.gifBackgroundImages) == 0:
                 # CREATE FILES IN LIST
@@ -132,7 +151,7 @@ class Screen(tk.Frame):
                 self.actualGifBackgroundImage = 0
 
             img = Image.open('resources/cute/' + self.gifBackgroundImages[self.actualGifBackgroundImage])
-            img = img.resize((self.win.winfo_width(), self.win.winfo_height()))
+            img = img.resize((self.parent.winfo_width(), self.parent.winfo_height()))
             imgs = ImageTk.PhotoImage(image=img, master=self.label1)
             self.label1.imgtk = imgs
             self.label1.configure(image=imgs)
@@ -141,11 +160,11 @@ class Screen(tk.Frame):
             self.label1["image"] = self.background'''
             self.actualGifBackgroundImage += 1
 
-            # MILISECONDS/ PER FRAME
-        Global.func_id = self.after(100, lambda: self.run_gif())
+        # MILISECONDS/ PER FRAME
+        Global.func_id = self.parent.after(1000, lambda: self.run_gif())
 
-    def sad(self):
-        img = Image.open('resources/sad.gif')
+    def sad(self, path):
+        img = Image.open(path)
         # img = img.resize((self.win.winfo_width(), self.win.winfo_height()))
         imgs = ImageTk.PhotoImage(image=img, master=self.label1)
         self.label1.imgtk = imgs
@@ -186,6 +205,13 @@ class Screen(tk.Frame):
         self.lmain.grid(row=2, column=0)
 
         self.slider.grid(row=3, column=0)
+        tk.Label(frame, text='Usage time in minutes').grid(row=4, column=0)
+        self.usage = tk.Entry(frame, width=10)
+        self.usage.insert(0, 5)          # in minutes
+        self.usage.configure(state='disabled')
+        self.usage.grid(row=4, column=1, rowspan=2)
+        tk.Button(frame, text='+ ', command=lambda: Frames.add(1)).grid(row=4, column=2)
+        tk.Button(frame, text='- ', command=lambda: Frames.add(-1)).grid(row=5, column=2)
         self.show_frame()
 
 
@@ -198,7 +224,7 @@ def calibrate():
     (x, y, w, h) = rect_to_bb(rect[0])
     cv2.rectangle(req_frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
     print(x, y, w, h)
-    write_settings(x,y,w,h,s.slider.get())
+    write_settings(x, y, w, h, s.slider.get(), s.usage.get())
     if s.prev == 'setting':
         Frames.switch_page('setting')
     else:
@@ -206,16 +232,6 @@ def calibrate():
         s.run_gif()
     cv2.imshow('face', req_frame)
     cv2.waitKey(100)
-
-
-def write_settings(x, y, w, h, sensit):
-    dir_path = 'user_info/'+name+'_'+str(total)+'.txt'
-    Global.path = 'user_info/'+name+'_'+str(total)
-    fout = open(dir_path, 'w')   # open file in write mode, for new user
-    line = str(x)+" "+str(y)+" "+str(w)+" "+str(h)+" "+str(sensit)   # input to file has to be string
-    fout.write(line)
-    fout.close()
-    load_settings(dir_path)     # load the newly written settings
 
 
 def run(lbl):
@@ -231,13 +247,15 @@ def run(lbl):
         name = Global.name
         total = lbl
         Global.path = 'user_info/'+name+'_'+str(total)
+        Global.database = DataBase(Global.path)
         Global.monitor_thread.setDaemon(True)  # as it is infinite loop so it prevents to run after program exits
         Global.monitor_thread.start()
-        s = Screen()
-        Global.screen = s
+        if s is None:
+            s = Screen(root)
+            Global.screen = s
         s.run_gif()
         # s.blink()
-        s.mainloop()
+        root.mainloop()
         '''while True:
             s.blink()
             time.sleep(1)'''
@@ -245,37 +263,40 @@ def run(lbl):
         Global.engine.say("i do not know you")
         Global.engine.setProperty('rate', 120)
         Global.engine.runAndWait()
-        s = Screen()
+        s = Screen(root)
         Global.screen = s
 
-        lbl = tk.Label(s.win, text='you resemble ', width=20)
-        lbl.grid(row=0, column=0, sticky='e')
+        lbl = tk.Label(s.win, text='you resemble '+f.subjects[Global.close_to])
+        lbl.grid(row=0, column=0)
         '''text = ''
         for name in f.subjects:
             text += name'''
         var = tk.StringVar(s.win)
         var.set(f.subjects[Global.close_to])
-        list = tk.OptionMenu(s.win, var, *f.subjects)
-        list.grid(row=0, column=1, sticky='ew')
+        listy = tk.OptionMenu(s.win, var, *f.subjects, command=lambda x: checkUser(var))
+        listy.grid(row=1, column=0)
         # tk.Label(s.win, text=text).grid(row=1, column=0)
-        s.ok.grid(row=2, column=0)
+        # s.ok.grid(row=2, column=0)
         print('you resemble ', f.subjects[Global.close_to])
-        s.sad()
-        s.mainloop()
+        s.sad('resources/sad.gif')
+        root.mainloop()
 
 
 def gather():
     global total, s, name
     name = Global.name
+    Global.path = 'user_info/'+name+'_'+str(total)
+    Global.database = DataBase(Global.path)                 # create a database for the new user
     '''s.label.grid_forget()
     s.ok.grid_forget()
     s.e.grid_forget()'''
-    t3 = threading.Thread(target=gather_samples, args=(name, total))
+    t3 = threading.Thread(target=gather_samples, args=(name, total, 10))
+    # t3.setDaemon(True)
     # the index for which samples are to  be gathered
     t3.start()
     Frames.switch_page('config')
     s.get_config()
-    s.mainloop()
+    root.mainloop()
 
     '''while True:
         s.blink()
@@ -288,4 +309,7 @@ f.load_settings()
 name = ""                           # the variable to hold new user
 total = len(f.subjects)             # total number of users, ,i.e the next label for new user
 label = MainFace1.FaceVal.label     # the predicted label
+root = tk.Tk()
+root.attributes("-fullscreen", True)
+root.title("FitAssist")
 run(label)            # run main gui

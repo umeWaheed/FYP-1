@@ -1,0 +1,444 @@
+idle duration 0
+usage started Tue Apr 10 20:25:43 2018
+usage exceed Tue Apr 10 20:26:43 2018
+usage duration 83.18178486824036
+idle started Tue Apr 10 20:27:07 2018
+idle duration 35.41871905326843
+usage started Tue Apr 10 20:27:42 2018
+usage exceed Tue Apr 10 20:28:42 2018
+usage duration 71.67179489135742
+idle started Tue Apr 10 20:28:54 2018
+idle duration 0
+usage started Tue Apr 10 20:29:25 2018
+usage duration 3.2968528270721436
+idle started Tue Apr 10 20:29:29 2018
+idle duration 0
+usage started Tue Apr 10 20:30:15 2018
+idle duration 0
+usage started Tue Apr 10 20:30:56 2018
+idle duration 0
+usage started Wed Apr 11 20:26:35 2018
+idle duration 0
+usage started Wed Apr 11 20:34:39 2018
+idle duration 0
+usage started Wed Apr 11 20:39:28 2018
+usage duration 29.220794677734375
+idle started Wed Apr 11 20:39:57 2018
+idle duration 0
+usage started Wed Apr 11 20:42:43 2018
+usage duration 6.745472431182861
+idle started Wed Apr 11 20:42:50 2018
+idle duration 0
+usage started Wed Apr 11 20:43:54 2018
+usage duration 32.06903290748596
+idle started Wed Apr 11 20:44:26 2018
+idle duration 0
+usage started Wed Apr 11 20:55:39 2018
+usage duration 14.02858853340149
+idle started Wed Apr 11 20:55:53 2018
+idle duration 0
+usage started Wed Apr 11 21:01:26 2018
+idle duration 0
+usage started Wed Apr 11 21:04:35 2018
+idle duration 0
+usage started Wed Apr 11 21:11:20 2018
+usage duration 29.44627594947815
+idle started Wed Apr 11 21:11:49 2018
+idle duration 0
+usage started Wed Apr 11 21:14:25 2018
+usage duration 14.718269109725952
+idle started Wed Apr 11 21:14:40 2018
+idle duration 0
+usage started Wed Apr 11 21:17:54 2018
+idle duration 0
+usage started Wed Apr 11 21:18:59 2018
+idle duration 0
+usage started Wed Apr 11 21:47:01 2018
+usage duration 46.379417181015015
+idle started Wed Apr 11 21:47:47 2018
+idle duration 0
+usage started Wed Apr 11 22:19:01 2018
+idle duration 0
+usage started Thu Apr 12 11:51:05 2018
+usage exceed Thu Apr 12 11:51:06 2018
+idle duration 0
+usage started Thu Apr 12 11:56:28 2018
+usage duration 17.144681453704834
+idle started Thu Apr 12 11:56:45 2018
+idle duration 0
+usage started Thu Apr 12 12:22:38 2018
+usage exceed Thu Apr 12 12:23:38 2018
+usage duration 112.31119132041931
+idle started Thu Apr 12 12:24:30 2018
+idle duration 0
+usage started Thu Apr 12 12:28:15 2018
+usage exceed Thu Apr 12 12:28:15 2018
+idle duration 0
+usage started Thu Apr 12 12:51:47 2018
+usage exceed Thu Apr 12 12:52:47 2018
+idle duration 0
+usage started Thu Apr 12 13:03:07 2018
+usage exceed Thu Apr 12 13:03:08 2018
+idle duration 0
+usage started Thu Apr 12 13:05:26 2018
+usage exceed Thu Apr 12 13:05:26 2018
+idle duration 0
+usage started Thu Apr 12 13:08:20 2018
+usage exceed Thu Apr 12 13:08:21 2018
+usage duration 14.42511773109436
+usage duration 1523520515.3317804
+idle started Thu Apr 12 13:08:35 2018
+idle started Thu Apr 12 13:08:35 2018
+idle duration 0
+usage started Thu Apr 12 13:17:30 2018
+usage duration 165.90007424354553
+idle started Thu Apr 12 13:20:16 2018
+idle duration 0.0770730972290039
+usage started Thu Apr 12 13:20:16 2018
+usage duration 77.9477334022522
+idle started Thu Apr 12 13:21:34 2018
+idle duration 11.973528385162354
+usage started Thu Apr 12 13:21:46 2018
+usage duration 0.03704833984375
+idle started Thu Apr 12 13:21:46 2018
+idle duration 5.14263653755188
+usage started Thu Apr 12 13:21:51 2018
+idle duration 0
+usage started Thu Apr 12 13:47:11 2018
+usage exceed Thu Apr 12 13:47:12 2018
+usage duration 25.629591703414917
+idle started Thu Apr 12 13:47:37 2018
+idle duration 1523522858.3200092
+usage started Thu Apr 12 13:47:38 2018
+usage duration 0.09906983375549316
+idle started Thu Apr 12 13:47:38 2018
+idle duration 1523522858.3200092
+usage started Thu Apr 12 13:47:38 2018
+usage duration 6.218860387802124
+idle started Thu Apr 12 13:47:44 2018
+idle duration 7.340033292770386
+usage started Thu Apr 12 13:47:44 2018
+idle duration 0
+usage started Thu Apr 12 13:55:16 2018
+idle duration 0
+usage started Thu Apr 12 14:03:08 2018
+usage duration 18.06262969970703
+idle started Thu Apr 12 14:03:26 2018
+idle duration 0
+usage started Thu Apr 12 14:07:18 2018
+idle duration 0
+usage started Thu Apr 12 14:11:03 2018
+idle duration 0
+usage started Thu Apr 12 14:14:28 2018
+idle duration 0
+usage started Thu Apr 12 14:19:33 2018
+idle duration 0
+usage started Thu Apr 12 14:21:28 2018
+idle duration 0
+usage started Thu Apr 12 14:24:48 2018
+idle duration 0
+usage started Thu Apr 12 18:00:09 2018
+idle duration 0
+usage started Thu Apr 12 18:03:54 2018
+idle duration 0
+usage started Thu Apr 12 18:07:51 2018
+usage exceed Thu Apr 12 18:12:51 2018
+usage duration 326.9693319797516
+idle started Thu Apr 12 18:13:18 2018
+idle duration 5.352619886398315
+usage started Thu Apr 12 18:13:23 2018
+usage duration 15.695451021194458
+idle started Thu Apr 12 18:13:39 2018
+idle duration 0
+usage started Thu Apr 12 18:49:07 2018
+usage duration 21.494532108306885
+idle started Thu Apr 12 18:49:29 2018
+idle duration 19.938589334487915
+usage started Thu Apr 12 18:49:49 2018
+usage duration 0.04703092575073242
+idle started Thu Apr 12 18:49:49 2018
+idle duration 19.938589334487915
+usage started Thu Apr 12 18:49:49 2018
+usage duration 1.8434698581695557
+idle started Thu Apr 12 18:49:51 2018
+idle duration 7.871568441390991
+usage started Thu Apr 12 18:49:59 2018
+usage duration 0.04202914237976074
+idle started Thu Apr 12 18:49:59 2018
+idle duration 7.871568441390991
+usage started Thu Apr 12 18:49:59 2018
+usage duration 34.73633146286011
+idle started Thu Apr 12 18:50:33 2018
+idle duration 3.409428119659424
+usage started Thu Apr 12 18:50:37 2018
+usage duration 0.041028738021850586
+idle started Thu Apr 12 18:50:37 2018
+idle duration 3.409428119659424
+usage started Thu Apr 12 18:50:37 2018
+usage duration 1.7301907539367676
+idle started Thu Apr 12 18:50:39 2018
+idle duration 0.36073780059814453
+usage started Thu Apr 12 18:50:39 2018
+usage duration 0.08806324005126953
+idle started Thu Apr 12 18:50:39 2018
+idle duration 0.18413043022155762
+usage started Thu Apr 12 18:50:39 2018
+usage duration 0.03702521324157715
+idle started Thu Apr 12 18:50:39 2018
+idle duration 0.15811443328857422
+usage started Thu Apr 12 18:50:40 2018
+usage duration 0.04403114318847656
+idle started Thu Apr 12 18:50:40 2018
+idle duration 0.5106549263000488
+usage started Thu Apr 12 18:50:40 2018
+usage duration 0.8575401306152344
+idle started Thu Apr 12 18:50:41 2018
+idle duration 1.743239164352417
+usage started Thu Apr 12 18:50:43 2018
+usage duration 0.17112064361572266
+idle started Thu Apr 12 18:50:43 2018
+idle duration 0.11908578872680664
+usage started Thu Apr 12 18:50:43 2018
+usage duration 4.724204778671265
+idle started Thu Apr 12 18:50:48 2018
+idle duration 0.03902626037597656
+usage started Thu Apr 12 18:50:48 2018
+usage duration 0.23316597938537598
+idle started Thu Apr 12 18:50:48 2018
+idle duration 0.03902626037597656
+usage started Thu Apr 12 18:50:48 2018
+usage duration 0.6044292449951172
+idle started Thu Apr 12 18:50:49 2018
+idle duration 0.0670466423034668
+usage started Thu Apr 12 18:50:49 2018
+usage duration 0.05703926086425781
+idle started Thu Apr 12 18:50:49 2018
+idle duration 0.05603933334350586
+usage started Thu Apr 12 18:50:49 2018
+usage duration 0.9656863212585449
+idle started Thu Apr 12 18:50:50 2018
+idle duration 0.20814919471740723
+usage started Thu Apr 12 18:50:50 2018
+usage duration 0.7585396766662598
+idle started Thu Apr 12 18:50:51 2018
+idle duration 0.20814919471740723
+usage started Thu Apr 12 18:50:51 2018
+usage duration 0.04803586006164551
+idle started Thu Apr 12 18:50:51 2018
+idle duration 0.05703997611999512
+usage started Thu Apr 12 18:50:51 2018
+usage duration 0.22215795516967773
+idle started Thu Apr 12 18:50:52 2018
+idle duration 0.07705354690551758
+usage started Thu Apr 12 18:50:52 2018
+usage duration 0.5659956932067871
+idle started Thu Apr 12 18:50:52 2018
+idle duration 0.2686126232147217
+usage started Thu Apr 12 18:50:53 2018
+usage duration 0.10780882835388184
+idle started Thu Apr 12 18:50:53 2018
+idle duration 0.2686126232147217
+usage started Thu Apr 12 18:50:53 2018
+usage duration 0.04503154754638672
+idle started Thu Apr 12 18:50:53 2018
+idle duration 0.2686126232147217
+usage started Thu Apr 12 18:50:53 2018
+idle duration 0
+usage started Thu Apr 12 18:55:23 2018
+usage exceed Thu Apr 12 19:00:23 2018
+idle duration 0
+usage started Thu Apr 12 19:12:27 2018
+usage duration 73.12176775932312
+idle started Thu Apr 12 19:13:40 2018
+idle duration 0
+usage started Thu Apr 12 19:17:49 2018
+usage duration 24.54039692878723
+idle started Thu Apr 12 19:18:13 2018
+idle duration 0.7991271018981934
+usage started Thu Apr 12 19:18:14 2018
+idle duration 0
+usage started Thu Apr 12 22:26:29 2018
+idle duration 0
+usage started Thu Apr 12 22:26:31 2018
+usage duration 3.0538032054901123
+idle started Thu Apr 12 22:26:34 2018
+idle duration 0
+usage started Thu Apr 12 22:26:34 2018
+usage duration 0.12625741958618164
+idle started Thu Apr 12 22:26:34 2018
+idle duration 1.0236070156097412
+usage started Thu Apr 12 22:26:35 2018
+usage duration 0.4575188159942627
+idle started Thu Apr 12 22:26:36 2018
+idle duration 0.033022403717041016
+usage started Thu Apr 12 22:26:36 2018
+usage duration 0.08906269073486328
+idle started Thu Apr 12 22:26:36 2018
+idle duration 0.14111900329589844
+usage started Thu Apr 12 22:26:36 2018
+usage duration 0.038023948669433594
+idle started Thu Apr 12 22:26:36 2018
+idle duration 0.11307954788208008
+usage started Thu Apr 12 22:26:36 2018
+usage duration 0.08906245231628418
+idle started Thu Apr 12 22:26:36 2018
+idle duration 0.04004645347595215
+usage started Thu Apr 12 22:26:36 2018
+usage duration 8.172598123550415
+idle started Thu Apr 12 22:26:44 2018
+idle duration 0.04004645347595215
+usage started Thu Apr 12 22:26:45 2018
+usage duration 0.040048837661743164
+idle started Thu Apr 12 22:26:45 2018
+idle duration 0.08105659484863281
+usage started Thu Apr 12 22:26:45 2018
+usage duration 0.03604602813720703
+idle started Thu Apr 12 22:26:45 2018
+idle duration 0.037024736404418945
+usage started Thu Apr 12 22:26:45 2018
+usage duration 0.2742156982421875
+idle started Thu Apr 12 22:26:45 2018
+idle duration 0.1681351661682129
+usage started Thu Apr 12 22:26:45 2018
+usage duration 0.20443224906921387
+idle started Thu Apr 12 22:26:45 2018
+idle duration 0.03702497482299805
+usage started Thu Apr 12 22:26:46 2018
+usage duration 0.04002714157104492
+idle started Thu Apr 12 22:26:46 2018
+idle duration 0.10507392883300781
+usage started Thu Apr 12 22:26:46 2018
+usage duration 0.2756459712982178
+idle started Thu Apr 12 22:26:46 2018
+idle duration 0.10505390167236328
+usage started Thu Apr 12 22:26:46 2018
+usage duration 0.2720050811767578
+idle started Thu Apr 12 22:26:46 2018
+idle duration 0.10505390167236328
+usage started Thu Apr 12 22:26:46 2018
+usage duration 0.0340266227722168
+idle started Thu Apr 12 22:26:47 2018
+idle duration 0.1851353645324707
+usage started Thu Apr 12 22:26:47 2018
+usage duration 0.036026954650878906
+idle started Thu Apr 12 22:26:47 2018
+idle duration 0.21715378761291504
+usage started Thu Apr 12 22:26:47 2018
+usage duration 0.03702521324157715
+idle started Thu Apr 12 22:26:47 2018
+idle duration 0.035024404525756836
+usage started Thu Apr 12 22:26:47 2018
+usage duration 0.09206366539001465
+idle started Thu Apr 12 22:26:47 2018
+idle duration 0
+usage started Thu Apr 12 22:28:44 2018
+usage duration 1.8104798793792725
+idle started Thu Apr 12 22:28:45 2018
+idle duration 0
+usage started Thu Apr 12 22:28:46 2018
+usage duration 0.16862821578979492
+idle started Thu Apr 12 22:28:46 2018
+idle duration 0.0620417594909668
+usage started Thu Apr 12 22:28:46 2018
+usage duration 0.09318971633911133
+idle started Thu Apr 12 22:28:46 2018
+idle duration 0.0620417594909668
+usage started Thu Apr 12 22:28:46 2018
+usage duration 3.2872121334075928
+idle started Thu Apr 12 22:28:49 2018
+idle duration 0.0620417594909668
+usage started Thu Apr 12 22:28:49 2018
+idle duration 0.0620417594909668
+usage started Thu Apr 12 22:28:52 2018
+usage duration 2.778083324432373
+idle started Thu Apr 12 22:28:55 2018
+idle duration 0.2830464839935303
+usage started Thu Apr 12 22:28:55 2018
+usage duration 0.15583324432373047
+idle started Thu Apr 12 22:28:56 2018
+idle duration 0.038025617599487305
+usage started Thu Apr 12 22:28:56 2018
+usage duration 0.15141868591308594
+idle started Thu Apr 12 22:28:56 2018
+idle duration 0.0400238037109375
+usage started Thu Apr 12 22:28:56 2018
+usage duration 0.4229736328125
+idle started Thu Apr 12 22:28:56 2018
+idle duration 0.11213445663452148
+usage started Thu Apr 12 22:28:57 2018
+usage duration 0.43481874465942383
+idle started Thu Apr 12 22:28:57 2018
+idle duration 0.11213445663452148
+usage started Thu Apr 12 22:28:57 2018
+usage duration 2.9161219596862793
+idle started Thu Apr 12 22:29:00 2018
+idle duration 0.11213445663452148
+usage started Thu Apr 12 22:29:00 2018
+usage duration 2.7563047409057617
+idle started Thu Apr 12 22:29:03 2018
+idle duration 0
+usage started Thu Apr 12 22:31:31 2018
+idle duration 0
+usage started Thu Apr 12 22:31:40 2018
+usage duration 3.6198740005493164
+idle started Thu Apr 12 22:31:44 2018
+idle duration 0
+usage started Thu Apr 12 22:31:44 2018
+usage duration 0.604041337966919
+idle started Thu Apr 12 22:31:44 2018
+idle duration 0
+usage started Thu Apr 12 22:31:45 2018
+usage duration 0.06338334083557129
+idle started Thu Apr 12 22:31:45 2018
+idle duration 0.0822286605834961
+usage started Thu Apr 12 22:31:45 2018
+usage duration 0.09906983375549316
+idle started Thu Apr 12 22:31:45 2018
+idle duration 0.07822632789611816
+usage started Thu Apr 12 22:31:45 2018
+usage duration 0.8405768871307373
+idle started Thu Apr 12 22:31:46 2018
+idle duration 0.4873082637786865
+usage started Thu Apr 12 22:31:46 2018
+usage duration 0.10407471656799316
+idle started Thu Apr 12 22:31:46 2018
+idle duration 0.13209199905395508
+usage started Thu Apr 12 22:31:47 2018
+usage duration 0.03802824020385742
+idle started Thu Apr 12 22:31:47 2018
+idle duration 0.13209199905395508
+usage started Thu Apr 12 22:31:47 2018
+usage duration 0.04503440856933594
+idle started Thu Apr 12 22:31:47 2018
+idle duration 0.05603814125061035
+usage started Thu Apr 12 22:31:47 2018
+usage duration 0.9543089866638184
+idle started Thu Apr 12 22:31:48 2018
+idle duration 0
+usage started Thu Apr 12 22:33:48 2018
+idle duration 0
+usage started Thu Apr 12 22:33:50 2018
+idle duration 0
+usage started Fri Apr 13 10:49:32 2018
+idle duration 0
+usage started Fri Apr 13 10:49:41 2018
+usage duration 10.124248027801514
+idle started Fri Apr 13 10:49:52 2018
+idle duration 0
+usage started Fri Apr 13 10:50:56 2018
+idle duration 0
+usage started Fri Apr 13 10:51:04 2018
+usage duration 12.100726127624512
+idle started Fri Apr 13 10:51:16 2018
+idle duration 0
+usage started Fri Apr 13 10:55:16 2018
+idle duration 0
+usage started Fri Apr 13 10:55:24 2018
+usage duration 15.03371000289917
+idle started Fri Apr 13 10:55:39 2018
+idle duration 0
+usage started Sat Apr 14 11:23:51 2018
+idle duration 0
+usage started Sat Apr 14 11:32:35 2018
+usage duration 68.60650825500488
+idle started Sat Apr 14 11:33:43 2018

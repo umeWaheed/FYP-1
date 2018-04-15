@@ -1,11 +1,21 @@
 import Global
 from Global import Points
+import os
+import time
+from tinydb import TinyDB, Query
 
 # global area
 
 
-def load_settings(dir_path):
+def load_settings():
     # global area
+    # load settings from the database.
+    # check if db exists.
+    if os.path.exists(Global.path+'.json'):
+        Points.x, Points.y, Points.w, Points.h, Points.range, Points.usage = Global.database.get_settings()
+    else:
+        print('unable to read settings')
+    '''
     try:
         file = open(dir_path,'r')
         for line in file:
@@ -16,12 +26,13 @@ def load_settings(dir_path):
             Points.w = int(arr[2])
             Points.h = int(arr[3])
             Points.range = int(arr[4])
+            Points.usage = int(arr[5])
             # print("area=", (Points.w*Points.h))
             # area = Points.w*Points.h
         file.close()
     except:
         print('unable to read settings')
-
+    '''
 
 def check_movement(newX, newY, newW, newH):
     left, right, bottom, close, far = 0,0,0,0,0
@@ -58,6 +69,11 @@ def check_movement(newX, newY, newW, newH):
         print(index[largest])
         present = largest
 
+    write_posture(index[present])
+    Global.engine.say(index[present])
+    Global.engine.setProperty('rate', 120)
+    Global.engine.runAndWait()
+
     if present != Points.prev:
         Points.prev = present   # change the previous state
         '''Global.engine.say(index[present])
@@ -65,7 +81,34 @@ def check_movement(newX, newY, newW, newH):
         Global.engine.runAndWait()'''
 
 
-def write_blinks(time, total):
-    file = open(Global.path+'_blink.txt','a')
-    file.write(str(time)+" "+str(total))
+def write_settings(x, y, w, h, sensit, usage):
+    # Global.path = 'user_info/'+name+'_'+str(label)
+    Global.database.write_settings(x, y, w, h, sensit, int(usage)*60)
+    '''if not os.path.exists(Global.path):
+        os.mkdir(Global.path)
+    dir_path = Global.path+'/settings.txt'
+    # Global.path = 'user_info/'+name+'_'+str(total)
+    fout = open(dir_path, 'w')   # open file in write mode, for new user
+    # covert usage into seconds by *60
+    line = str(x)+" "+str(y)+" "+str(w)+" "+str(h)+" "+str(sensit)+" "+str(int(usage)*60)   # input to file has to be string
+    fout.write(line)
+    fout.close()'''
+    load_settings()     # load the newly written settings
 
+
+def write_blinks(time, total):
+    Global.database.add_blinks(time,total)
+    # file = open(Global.path+'/blinks.txt','a')
+    # file.write(str(time)+" "+str(total)+"\n")
+
+
+def write_usage(time, type, duration):
+    Global.database.add_usage(time, type, duration)
+    # file = open(Global.path+'/usage.txt','a')
+    # file.write(usage+'\n')
+
+
+def write_posture(pose):
+    Global.database.add_posture(time.strftime("%X"),pose)
+    # file = open(Global.path+'/posture.txt', 'a')
+    # file.write(pose+" "+str(time.asctime(time.localtime(time.time())))+"\n")

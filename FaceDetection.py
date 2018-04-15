@@ -87,12 +87,16 @@ def capture_img():
     # img_name = 'img'+ str(index)+'.jpg'
     # cv2.imwrite(os.path.join(path+'\\'+img_name), im)
     # cv2.waitKey(0)
-        return im
     else:
+        im = None
         print ('no image')
+    return im
 
 
-def gather_samples(name, lbl):
+def gather_samples(name, lbl, number):
+    # name = the name of user
+    # lbl = the corresponding label
+    # number = the number of images to be captured
     global path, index
     flag = True
     # lbl = str(len(MainFace1.FaceVal().subjects)) #the next label number
@@ -101,13 +105,13 @@ def gather_samples(name, lbl):
     if not os.path.exists(path):
         os.makedirs(path)
     # vid = cv2.VideoCapture(0)
-    while index < 10:
+    while index < number:
         img = capture_img()
         image = facecrop(img, True)
         # time.sleep(5)
         index += 1
-
-    MainFace1.load_new(name, lbl)    # load the new user into the model
+    if number != 2:       # if user is new then load new user
+        MainFace1.load_new(name, lbl)    # load the new user into the model
 
 
 '''s_path = 'training_data\\b'

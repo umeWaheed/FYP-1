@@ -1,0 +1,17 @@
+all set Thu Apr 12 18:08:50 2018
+too down Thu Apr 12 18:09:50 2018
+all set Thu Apr 12 18:10:50 2018
+all set Thu Apr 12 18:11:50 2018
+all set Thu Apr 12 18:12:50 2018
+too down Thu Apr 12 18:50:10 2018
+too down Thu Apr 12 18:51:17 2018
+too down Thu Apr 12 18:52:23 2018
+all set Thu Apr 12 18:56:23 2018
+all set Thu Apr 12 18:56:23 2018
+all set Thu Apr 12 18:57:25 2018
+all set Thu Apr 12 18:58:25 2018
+too down Thu Apr 12 18:59:24 2018
+too left Thu Apr 12 19:00:28 2018
+too far Thu Apr 12 19:13:27 2018
+too down Sat Apr 14 11:24:55 2018
+too down Sat Apr 14 11:33:34 2018

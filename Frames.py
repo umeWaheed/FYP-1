@@ -1,6 +1,8 @@
 import Global
 import tkinter as tk
 from PIL import Image, ImageTk
+from cv2 import destroyAllWindows
+from graph import plot
 # import linecache
 
 # func_id = Global.func_id
@@ -10,7 +12,7 @@ def switch_page(target):
     s = Global.screen
     func_id = Global.func_id
     if func_id is not None:
-        s.after_cancel(func_id)
+        s.parent.after_cancel(func_id)
         Global.func_id = None
         print(func_id)
 
@@ -42,7 +44,7 @@ def get_about():
     lab = tk.Label(s.frames['about'])
     lab.grid(row=3, column=0)
     img = Image.open('resources/about.gif')
-    img = img.resize((s.win.winfo_width(),s.win.winfo_height()))
+    img = img.resize((s.parent.winfo_width(),s.parent.winfo_height()))
     imgs = ImageTk.PhotoImage(image=img, master=lab)
     lab.imgtk = imgs
     lab.configure(image=imgs)
@@ -57,18 +59,27 @@ def get_settings():
     s = Global.screen
     switch_page('setting')
     frame = s.frames['setting']     # get the settings frame
-    lab = tk.Label(frame, text='You are ')
-    lab.grid(row=3, column=0)
-    entry = tk.Entry(frame)
-    entry.insert(0,Global.name)
-    entry.grid(row=3, column=1)
-    lab1 = tk.Label(frame, text='Change settings')
-    lab1.grid(row=4, column=0)
+    lab = tk.Label(frame, text='You are '+Global.name)
+    lab.grid(row=0, column=0, pady=10)
+    lab2 = tk.Label(frame)
+    img = Image.open('resources/neutral.gif')
+    img.resize((50, 50))
+    imgs = ImageTk.PhotoImage(image=img, master=lab2)
+    lab2.imgtk = imgs
+    lab2.configure(image=imgs)
+    lab2.grid(row=1, column=0)
+    change_pic = tk.Button(frame, text='Update picture')
+    change_pic.grid(row=2, column=0, pady=10)
+    # entry = tk.Entry(frame)
+    # entry.insert(0,Global.name)
+    # entry.grid(row=3, column=1)
+    lab1 = tk.Label(frame, text='Update settings')
+    lab1.grid(row=3, column=0)
     button = tk.Button(frame, text='change', command=change_sett)
-    button.grid(row=4, column=1)
+    button.grid(row=3, column=1)
 
-    save_button = tk.Button(frame, text='save changes')
-    save_button.grid(row=8, column=0)
+    # save_button = tk.Button(frame, text='save changes')
+    # save_button.grid(row=5, column=0)
     # user_name = tk.Entry()
 
 
@@ -84,12 +95,13 @@ def cancel():
     s = Global.screen
     func_id = Global.func_id
     if func_id is not None:
-        s.after_cancel(func_id)
+        s.parent.after_cancel(func_id)
         Global.func_id = None
         print(func_id)
-    s.win.destroy()
-    # cv2.destroyAllWindows()
+    s.parent.destroy()
     Global.vid.release()
+    destroyAllWindows()
+    Global.shutdown = True
     # Global.vid.stop()
 
 
@@ -141,3 +153,23 @@ def read_exer(id1):
             lab.imgtk = imgs
             lab.configure(image=imgs)
             lab.grid(row=2, column=0)
+
+
+def add(flag):
+    val = int(Global.screen.usage.get())
+    if val < 30 and flag == 1:
+        # if flag is +1 and val<30 minutes then value is incremented
+        val = val + 5
+    if val > 5 and flag == -1:
+        val = val - 5
+
+    Global.screen.usage.configure(state='normal')
+    Global.screen.usage.delete(0, 'end')
+    Global.screen.usage.insert(0, val)
+    Global.screen.usage.configure(state='disabled')
+
+
+def get_stats():
+    switch_page('stats')
+    frame = Global.screen.frames['stats']
+    plot(frame)

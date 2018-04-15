@@ -18,9 +18,9 @@ class VideoStream:
 
     def read(self):
         # return the current frame
-        return self.stream.read()
+        return True,self.stream.read()
 
-    def stop(self):
+    def release(self):
         self.stream.stop()
 
 
